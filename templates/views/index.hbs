@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather</title>
+    <link rel="icon" href="./img/weather.png">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- to access the arguments passed from node 'app.js' us {{name_of_argument}}-->
+    <div class="main-content">
+        {{>header}}
+        <p>Use this site to get weather info.</p>
+
+        <form>
+            <input type="text" placeholder="Insert the location...">
+            <button>Search</button>
+        </form>
+
+        <p id="msg-1"></p>
+        <p id="msg-2"></p>
+    </div>
+    {{>footer}}
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
