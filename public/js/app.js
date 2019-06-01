@@ -1,6 +1,3 @@
-//logged to the browser terminal
-console.log('client side js file is loaded')
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const message1 = document.querySelector('#msg-1')
@@ -20,7 +17,7 @@ weatherForm.addEventListener('submit', (e) => {
      * fetch -> triggers the route '/weather' set in src/app.js
      * There it calls geocode function passing the parameter from query-string
      */
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
 
         response.json().then((data) => {
             if (data.error) {
