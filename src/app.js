@@ -44,16 +44,16 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About me',
-        name: 'Denis, about page'
+        title: 'About me',              //goes to header partial
+        name: 'Denis, about page'       //goes to footer partial
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help page',
-        name: 'Denis, help page',
-        helpText: 'This is useful text'
+        title: 'Help page',             //goes to header partial
+        name: 'Denis, help page',       //goes to footer partial
+        helpText: 'This is useful text' //goes to /help page
     })
 })
 
@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, forecastData, icon) => {
 
             if (error) {
                 return res.send({
@@ -83,7 +83,8 @@ app.get('/weather', (req, res) => {
             res.send({
                 location,
                 forecastData,
-                address: req.query.address
+                address: req.query.address,
+                icon
             })
         })
     })

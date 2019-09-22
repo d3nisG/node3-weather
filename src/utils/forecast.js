@@ -8,9 +8,9 @@ const forecast = (lat, long, callback) => {
         json: true
     }, (error, { body }) => {
         if (error) {
-            callback('Unable to contact the service.', undefined)
+            callback('Unable to contact the service.', undefined, undefined)
         } else if (body.error) {
-            callback(body.error, undefined)
+            callback(body.error, undefined, undefined)
         } else {
             const temp = body.currently.temperature
             const perc = body.currently.precipProbability
@@ -18,7 +18,11 @@ const forecast = (lat, long, callback) => {
             const tempHigh = body.daily.data[0].temperatureHigh
             const tempLow = body.daily.data[0].temperatureLow
 
-            callback(undefined, todaySummary + " It is " + temp + "°C degrees. There is " + perc + "%  chance of rain. High temp: " + tempHigh + ", Low temp: " + tempLow)
+            // temp icon
+            const icon = body.daily.data[0].icon
+
+
+            callback(undefined, todaySummary + " It is " + temp + "°C degrees. There is " + perc + "%  chance of rain. High temp: " + tempHigh + ", Low temp: " + tempLow, icon)
         }
     })
 }

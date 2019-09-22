@@ -2,6 +2,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const message1 = document.querySelector('#msg-1')
 const message2 = document.querySelector('#msg-2')
+const iconDiv = document.querySelector('#msg-3')
 
 
 weatherForm.addEventListener('submit', (e) => {
@@ -25,6 +26,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 message1.textContent = data.location
                 message2.textContent = data.forecastData
+                iconDiv.textContent = 'Weather icon: ' + data.icon
             }
         })
     })
