@@ -14,4 +14,4 @@ Remove heroku remote:
 
 Add heroku remote:
 
-- git remote add heroku git@heroku.com:dg-weather-app.git
+- git remote add heroku git@...
