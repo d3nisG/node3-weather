@@ -1,5 +1,8 @@
 # node3-weather
 
+Live Example:
+https://dg-weather-app.herokuapp.com/
+
 Deploy process:
 
 - git add .
