@@ -3,18 +3,19 @@
 Live Example:
 https://dg-weather-app.herokuapp.com/
 
-Deploy process:
+Weather Icons By
+https://github.com/erikflowers/weather-icons
 
-- git add .
-- git commit -m "message"
-- git push (push commit to github)
-- git push heroku master (push changes to heroku)
+Geocoding API By
+https://www.mapbox.com/
 
+Forecast By
+https://darksky.net/
 
-Remove heroku remote:
+## What i used
 
-- git remote rm heroku
-
-Add heroku remote:
-
-- git remote add heroku git@...
+- Node (ExpressJS)
+  - routes handling
+  - serving dynamic pages made with hbs
+- Hbs
+  - templates of the pages
